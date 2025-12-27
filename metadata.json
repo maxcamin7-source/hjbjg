@@ -1,0 +1,8 @@
+{
+  "name": "Gridiron Stock Exchange",
+  "description": "A high-stakes fantasy football app where players are traded like stocks. Buy low on rookies, sell high on veterans, and use Gemini AI to gain a competitive edge in the player market.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
