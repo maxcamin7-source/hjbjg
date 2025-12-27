@@ -6,6 +6,7 @@ export class GeminiService {
   private ai: GoogleGenAI;
 
   constructor() {
+    // Fallback to empty string for initialization, but logic should ensure key presence
     this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
   }
 
@@ -57,7 +58,8 @@ export class GeminiService {
         model: 'gemini-3-flash-preview',
         contents: "Generate 3 short, catchy 'breaking news' headlines for a fictional NFL player stock market. Make them sound like ESPN or Bloomberg sports headlines.",
       });
-      return response.text;
+      // Ensure response.text is not undefined to satisfy TypeScript string requirement
+      return response.text || "Market volatility expected as teams enter next week's games.";
     } catch (error) {
       return "Market volatility expected as teams enter Week 12.";
     }
